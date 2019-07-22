@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  config:
+    build:
+      context: ./config
+      dockerfile: ./Dockerfile
+    ports:
+      - 8060:8060
+    restart: always
+  registry:
+    build:
+      context: ./registry
+      dockerfile: ./Dockerfile
+    depends_on:
+      - config
+    ports:
+      - 8061:8061
+    restart: always
+

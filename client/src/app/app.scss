@@ -1,0 +1,80 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.invalid {
+  border-bottom: 1px solid #FF6153;
+}
+
+.error-message .item-inner {
+  font-size: 0.8em;
+  border-bottom: 0 !important;
+  color: red;
+}
+
+.doneToast{
+  .toast-wrapper {
+    text-align: center !important;
+    border-radius: 10px !important;
+    width: 80% !important;
+    height: 150px;
+    text-align : center;
+    background: url(../assets/icon/payment/done-128.png) no-repeat 50px 0px;
+  }
+  .toast-message {
+    color : #20364e;
+  }
+}
+
+.alert-message{
+  overflow: hidden;
+}
+
+// QR Code Scanner
+ion-app.cameraView, ion-app.cameraView ion-content, ion-app.cameraView .nav-decor {
+  background: transparent none !important;
+}
+
+.transparent-body {
+  background: none transparent !important;
+  opacity: 0 !important;
+}
+
+#close-scanner-button {
+  display: none;
+}
+
+html.qr-scanner-open {
+
+  ion-app,
+  ion-content {
+      height: 70px !important;
+  }
+
+  ion-content {
+      background: none transparent !important;
+      --overflow: hidden !important;
+  }
+
+  ion-header,
+  ion-footer,
+  ion-content > *:not(#close-scanner-button) {
+      display: none;
+  }
+
+  #close-scanner-button {
+      display: block;
+  }
+}

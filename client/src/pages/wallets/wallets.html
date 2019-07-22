@@ -1,0 +1,41 @@
+<ion-content color=red padding class="no-scroll" style="background: none transparent;">
+  <div *ngIf="show == true">
+    <div *ngFor="let card of cards" (click)="redirect(card)">
+      <ion-grid [class.cardON]="card.state=='ON'" [class.cardOFF]="card.state=='OFF'">
+        <ion-row>
+          <ion-col class="bank">
+            {{card.bank}}
+          </ion-col>
+          <ion-col class="logo">
+            <img class="brand" [src]="card.logo">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="chip">
+            <img src="assets/img/chip.png">
+          </ion-col>
+        </ion-row>
+        <ion-row class="digits">
+          <ion-col class="number">
+            {{card.a}}
+          </ion-col>
+          <ion-col class="number">
+            <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+          </ion-col>
+          <ion-col class="number">
+            <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+          </ion-col>
+          <ion-col class="number">
+            {{card.d}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <div *ngIf="show == false" (click)="showCards()" >
+      <img class="wallet-img" src="assets/icon/wallet/wallet-258.png">
+  </div>
+  <ion-fab *ngIf="show == true">
+    <button ion-fab color="sopra-secondary" (click)="hideCards()"><ion-icon name="close"></ion-icon></button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,13 @@
+page-dash {
+  ion-content {
+    background-color: color($colors, light, base)!important;
+    padding-top: 50px;
+  }
+  .no-scroll .scroll-content{
+    overflow: hidden;
+  }
+  .info {
+    color: color($colors, sopra-secondary, base);
+    font-size: 1.0em;
+  }
+}

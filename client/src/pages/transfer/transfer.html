@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{service.label}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only >
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="no-scroll" padding style="background: none transparent;">
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label floating>Montant transfert</ion-label>
+      <ion-input type="number" [(ngModel)]="amount"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-label fixed>Devise</ion-label>
+      <ion-input disabled="true" value="MAD" [(ngModel)]="currency"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Détails</ion-label>
+      <ion-textarea type="text" [(ngModel)]="detail"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <div>
+    <img *ngIf="generatedQr == true" [src]="code" />
+  </div>
+  <div>
+    <button ion-button block  color="sopra-primary" (click)="validate()" >Generer le code</button>
+  </div>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{service.label}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only >
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="no-scroll" padding style="background: none transparent;">
+  <div *ngIf="loaded == false">
+    <ion-row class="logo-row">
+      <ion-col></ion-col>
+      <ion-col width-150>
+        <img src="assets/icon/payment/scan-256.png"/>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </div>
+  <div *ngIf="loaded == true">
+    <ion-card>
+      <ion-card-header>
+        Information
+      </ion-card-header>
+      <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <p class="info">Intitulé</p>
+              </ion-col>
+              <ion-col>
+                <p class="info">{{transaction.institution}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p class="info">Montant</p>
+              </ion-col>
+              <ion-col>
+                <p class="info">{{transaction.amount}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p class="info">Devise</p>
+              </ion-col>
+              <ion-col>
+                <p class="info">{{transaction.currency}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p class="info">Detail achat</p>
+              </ion-col>
+              <ion-col>
+                <p class="info">{{transaction.detail}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>      
+      </ion-card-content>
+    </ion-card>
+    <div>
+      <button ion-button block  outline color="sopra-secondary" (click)="showConfirm()">Payer</button>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+    <button ion-button outline block color="sopra-secondary" large (click)="scan()">Scanner le code</button>
+</ion-footer>

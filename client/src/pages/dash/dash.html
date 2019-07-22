@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{card.wallet}} - {{card.bank}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="exit" (click)="logout()"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content color=red padding class="no-scroll" style="background: none transparent;">
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let service of services" col-6 text-center (click)="goTo(service)">
+          <img class="brand" [src]="service.logo">
+          <p class="info">{{service.label}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
