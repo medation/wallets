@@ -1,0 +1,16 @@
+page-pannier {
+    ion-content {
+        background-color: color($colors, light, base) !important;
+        padding-top: 50px;
+    }
+    .info {
+        color: rgb(0, 0, 0);
+        font-size: 0.8em;
+    }
+    .logo-row {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        align-items: center;
+        text-align: center;
+    }
+}

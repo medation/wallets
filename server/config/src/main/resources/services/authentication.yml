@@ -21,7 +21,7 @@ eureka:
 
 jwtconfig:
   secret: the_secret
-  token-validity-in-seconds: 6000
+  token-validity-in-seconds: 250000
 
 security:
   ignored:

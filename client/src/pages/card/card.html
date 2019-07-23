@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ajouter une carte
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="exit" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content color=red padding class="no-scroll" style="background: none transparent;">
+  <div>
+    <ion-grid [class.cardON]="card.state=='ON'" [class.cardOFF]="card.state=='OFF'">
+      <ion-row>
+        <ion-col class="bank">
+          {{card.bank}}
+        </ion-col>
+        <ion-col class="logo">
+          <img class="brand" src="assets/img/{{card.type}}.png">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="chip">
+          <img src="assets/img/chip.png">
+        </ion-col>
+      </ion-row>
+      <ion-row class="digits">
+        <ion-col class="number">
+          {{card.a}}
+        </ion-col>
+        <ion-col class="number">
+          <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+        </ion-col>
+        <ion-col class="number">
+          <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+        </ion-col>
+        <ion-col class="number">
+          {{card.d}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="bank">
+          <ion-item>
+            <ion-label floating>Banque</ion-label>
+            <ion-input type="text" [(ngModel)]="card.bank"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="logo">
+          <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-select [(ngModel)]="card.type" interface="popover">
+              <ion-option *ngFor="let type of types" [value]="type">{{type}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col class="brand">
+          <ion-item>
+            <ion-label>Color</ion-label>
+            <ion-select [(ngModel)]="card.state" interface="popover">
+              <ion-option value="ON">Primary</ion-option>
+              <ion-option value="OFF">Secondary</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!--
+        <ion-row>
+          <ion-col class="chip">
+            <img src="assets/img/chip.png">
+          </ion-col>
+        </ion-row>
+      -->
+      <ion-row class="digits">
+        <ion-col class="number">
+          <ion-item>
+            <ion-label floating>A</ion-label>
+            <ion-input type="number" [(ngModel)]="card.a" max="9999"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="number">
+          <ion-item>
+            <ion-label floating>B</ion-label>
+            <ion-input type="number" [(ngModel)]="card.b" max="9999"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="number">
+          <ion-item>
+            <ion-label floating>C</ion-label>
+            <ion-input type="number" [(ngModel)]="card.c" max="9999"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="number">
+          <ion-item>
+            <ion-label floating>D</ion-label>
+            <ion-input type="number" [(ngModel)]="card.d" max="9999"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <button ion-button block  color="sopra-primary" (click)="validate()">Valider</button>
+  </div>
+</ion-content>

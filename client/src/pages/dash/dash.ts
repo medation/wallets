@@ -1,22 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PaymentPage } from '../payment/payment';
-import { AuthenticationService } from '../../services/authentication.service';
 import { TransferPage } from '../transfer/transfer';
 
 @Component({
   selector: 'page-dash',
   templateUrl: 'dash.html',
 })
-
 export class DashPage {
   
   public services: any;
   public card: any;
 
   constructor(public navCtrl: NavController, 
-              private navParams: NavParams,
-              private authenticationService: AuthenticationService) {
+              private navParams: NavParams) {
     this.card = navParams.get('card');
     this.services = [
       {
@@ -39,10 +36,6 @@ export class DashPage {
     if(service.id == 2){
       this.navCtrl.push(PaymentPage, { service : service });
     }
-  }
-
-  logout(){
-    this.authenticationService.logout();
   }
 
   goback(){

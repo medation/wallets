@@ -4,7 +4,8 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { PaymentService } from '../../services/payment.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { LoginPage } from '../login/login';
+import { CommandService } from '../../services/command.service';
+import { PannierPage } from '../pannier/pannier';
 
 @Component({
   selector: 'page-payment',
@@ -29,6 +30,7 @@ export class PaymentPage {
               private toastCtrl: ToastController,
               private barcodeScanner: BarcodeScanner,
               private paymentService: PaymentService,
+              private commandService: CommandService,
               private inAppBrowser: InAppBrowser) {
     this.service = navParams.get('service');
   }
@@ -80,6 +82,12 @@ export class PaymentPage {
     confirm.present();
   }
 
+  addCommand(){
+    this.commandService.addTransaction(this.transaction);
+    console.log(this.commandService.transactions);
+    this.navCtrl.push(PannierPage);
+  }
+
   showAlert() {
     let toast = this.toastCtrl.create({
       message: '',
@@ -100,7 +108,6 @@ export class PaymentPage {
     let message: string;
     if (error.status && error.status === 401) {
       message = 'Authentification requise';
-      this.navCtrl.push(LoginPage);
     }
     else {
       message = `Erreur : ${error.statusText}`;

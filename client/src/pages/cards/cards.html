@@ -1,6 +1,6 @@
 <ion-content color=red padding class="no-scroll" style="background: none transparent;">
   <div *ngIf="show == true">
-    <button  ion-button outline block color="sopra-primary" normal >Ajouter une carte</button>
+    <button  ion-button outline block color="sopra-primary" normal (click)="addCard()">Ajouter une carte</button>
     <div *ngFor="let card of cards" (click)="redirect(card)">
       <ion-grid [class.cardON]="card.state=='ON'" [class.cardOFF]="card.state=='OFF'">
         <ion-row>
@@ -8,7 +8,7 @@
             {{card.bank}}
           </ion-col>
           <ion-col class="logo">
-            <img class="brand" [src]="card.logo">
+            <img class="brand" src="assets/img/{{card.type}}.png">
           </ion-col>
         </ion-row>
         <ion-row>

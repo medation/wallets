@@ -23,6 +23,8 @@ export class MyApp {
       splashScreen.hide();
     });
 
+    authenticationService.checkLogin();
+    
     authenticationService.authUser.subscribe(jwt => {
       if (jwt) {
         this.rootPage = HomePage;
@@ -32,7 +34,6 @@ export class MyApp {
       }
     });
 
-    authenticationService.checkLogin();
 
   }
 }

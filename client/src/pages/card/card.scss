@@ -1,0 +1,64 @@
+page-card {
+    ion-content {
+        background-color: color($colors, light, base)!important;
+        padding-top: 50px;
+    }
+    ion-grid.cardON {
+        background-color: color($colors, sopra-secondary, base);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 15px;
+        max-width: 400px !important;
+        .msg {
+            background-color: color($colors, sopra-secondary, base);
+        }
+    }
+    ion-grid.cardOFF {
+        background-color: color($colors, sopra-primary, base);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 15px;
+        max-width: 400px !important;
+        .msg {
+            background-color: color($colors, sopra-primary, base);
+        }
+    }
+    .number {
+        color: white;
+        font-size: 1.1em;
+        line-height: 1.5em;
+        text-align: center;
+    }
+    .digits {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+    .bank {
+        text-align: left;
+        color: white;
+        font-size: 1.0em;
+    }
+    .brand {
+        max-width: 40%;
+        float: right;
+    }
+    .dot {
+        height: 5px;
+        width: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .chip {
+        img {
+            max-width: 50px;
+            padding-top: 5%;
+            border-radius: 10% !important;
+            overflow: hidden;
+        }
+    }
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+}

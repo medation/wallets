@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+         Pannier
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only >
+          <ion-icon name="exit"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding class="no-scroll" padding style="background: none transparent;">
+    <div>
+      <ion-card>
+        <ion-card-header>
+          Panier :
+        </ion-card-header>
+        <ion-card-content *ngFor="let transaction of transactions">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <p class="info">Intitulé</p>
+                </ion-col>
+                <ion-col>
+                  <p class="info">{{transaction.institution}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="info">Montant</p>
+                </ion-col>
+                <ion-col>
+                  <p class="info">{{transaction.amount}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="info">Devise</p>
+                </ion-col>
+                <ion-col>
+                  <p class="info">{{transaction.currency}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p class="info">Detail achat</p>
+                </ion-col>
+                <ion-col>
+                  <p class="info">{{transaction.detail}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>      
+        </ion-card-content>
+      </ion-card>
+      <div>
+        <button ion-button block  outline color="sopra-secondary">Payer</button>
+      </div>
+    </div>
+  </ion-content>

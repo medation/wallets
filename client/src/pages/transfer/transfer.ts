@@ -4,7 +4,6 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { PaymentService } from '../../services/payment.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-transfer',

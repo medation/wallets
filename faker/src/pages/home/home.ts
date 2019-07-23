@@ -24,6 +24,7 @@ export class HomePage {
         this.user = null;
       }
     });
+    console.log("Log is done")
     window.close();
   }
 

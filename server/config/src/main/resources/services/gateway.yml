@@ -11,6 +11,7 @@ zuul:
     authentication:
       path: /authentication/**
       serviceId: authentication
+      sensitiveHeaders:
     projet:
       path: /projet/**
       serviceId: projet

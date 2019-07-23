@@ -1,36 +1,36 @@
 page-transfer {
-  ion-content {
-    background-color: color($colors, light, base) !important;
-    padding-top: 50px;
-  }
-  .logo-row {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  ion-row {
-    align-items: center;
-    text-align: center;
-  }
-  ion-list{
-    background-color: color($colors, sopra-form, base) !important;
-  }
-  ion-item{
-    background-color: color($colors, sopra-form, base) !important;
-  }
-  ion-input{
-    color: color($colors, light, base);
-  }
-  ion-label{
-    color: color($colors, light, base);
-  }
-  ion-textarea{
-    color: color($colors, light, base);
-  }
-  .no-scroll .scroll-content{
-    overflow: hidden;
-  }
-  .info {
-    color: rgb(0, 0, 0);
-    font-size: 0.8em;
-  }
+    ion-content {
+        background-color: color($colors, light, base) !important;
+        padding-top: 50px;
+    }
+    .logo-row {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    ion-row {
+        align-items: center;
+        text-align: center;
+    }
+    ion-list{
+        background-color: color($colors, sopra-form, base) !important;
+    }
+    ion-item{
+        background-color: color($colors, sopra-form, base) !important;
+    }
+    ion-input{
+        color: color($colors, light, base);
+    }
+    ion-label{
+        color: color($colors, light, base);
+    }
+    ion-textarea{
+        color: color($colors, light, base);
+    }
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+    .info {
+        color: rgb(0, 0, 0);
+        font-size: 0.8em;
+    }
 }

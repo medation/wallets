@@ -1,19 +1,19 @@
 page-payment {
-  ion-content {
-    background-color: color($colors, light, base) !important;
-    padding-top: 50px;
-  }
-  .no-scroll .scroll-content{
-    overflow: hidden;
-  }
-  .info {
-    color: rgb(0, 0, 0);
-    font-size: 0.8em;
-  }
-  .logo-row {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    align-items: center;
-    text-align: center;
-  }
+    ion-content {
+        background-color: color($colors, light, base) !important;
+        padding-top: 50px;
+    }
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+    .info {
+        color: rgb(0, 0, 0);
+        font-size: 0.8em;
+    }
+    .logo-row {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        align-items: center;
+        text-align: center;
+    }
 }

@@ -2,20 +2,19 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
-import {WalletsPage} from '../pages/wallets/wallets';
 import {CardsPage} from '../pages/cards/cards';
+import {CardPage} from '../pages/card/card';
 import {DashPage} from '../pages/dash/dash';
 import {PaymentPage} from '../pages/payment/payment';
+import {PannierPage} from '../pages/pannier/pannier';
 import {TransferPage} from '../pages/transfer/transfer';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {LoginPage} from "../pages/login/login";
-import {SignupPage} from "../pages/signup/signup";
 import {CustomFormsModule} from 'ng2-validation';
 import {Storage, IonicStorageModule} from "@ionic/storage";
-import {AuthenticationService} from "../services/authentication.service";
 import {PaymentService} from "../services/payment.service";
 import {TokenizeService} from "../services/tokenize.service";
+import {CommandService} from "../services/command.service";
 import {HttpClientModule} from "@angular/common/http";
 import {JWT_OPTIONS, JwtModule} from '@auth0/angular-jwt';
 import { from } from 'rxjs/observable/from';
@@ -35,13 +34,12 @@ export function jwtOptionsFactory(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    WalletsPage,
     CardsPage,
-    LoginPage,
-    SignupPage,
+    CardPage,
     DashPage,
     PaymentPage,
-    TransferPage
+    TransferPage,
+    PannierPage
   ],
   imports: [
     BrowserModule,
@@ -64,13 +62,12 @@ export function jwtOptionsFactory(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    WalletsPage,
     CardsPage,
+    CardPage,
     DashPage,
-    LoginPage,
-    SignupPage,
     PaymentPage,
-    TransferPage
+    TransferPage,
+    PannierPage
   ],
   providers: [
     StatusBar,
@@ -80,9 +77,9 @@ export function jwtOptionsFactory(storage: Storage) {
     InAppBrowser,
     TouchID,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthenticationService,
     PaymentService,
-    TokenizeService
+    TokenizeService,
+    CommandService
   ]
 })
 export class AppModule {

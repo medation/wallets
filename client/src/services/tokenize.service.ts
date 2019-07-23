@@ -29,11 +29,19 @@ export class TokenizeService {
     this.storage.get(this.tokenCards).then(jwt => {
       if (jwt && !this.jwtHelper.isTokenExpired(jwt)) {
         this.httpClient.get(`${SERVER_URL_AUTH}/authenticate`)
-          .subscribe(() => this.authUser.next(jwt),
-            (err) => this.storage.remove(this.tokenCards).then(() => this.authUser.next(null)));
+          .subscribe(() => {
+            this.authUser.next(jwt);
+            console.log("Authenticate : "+ jwt)
+          },
+            (err) => {
+              this.storage.remove(this.tokenCards).then(() => this.authUser.next(null));
+              console.log("Remove authentication")
+            }
+          );
       }
       else {
         this.storage.remove(this.tokenCards).then(() => this.authUser.next(null));
+        console.log("No token")
       }
     });
   }
