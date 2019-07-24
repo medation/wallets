@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from "@ionic/storage";
 import { CardModel } from "../../model/card";
+import { CardIO } from '@ionic-native/card-io';
 
 @Component({
   selector: 'page-card',
@@ -16,7 +17,8 @@ export class CardPage {
 
   constructor(private navCtrl: NavController, 
               private navParams: NavParams,
-              private storage: Storage){
+              private storage: Storage,
+              private cardIO: CardIO){
     this.types = ["visa","mastercard","american"];    
     /* For test */
     this.card.bank = 'DEF';
@@ -40,5 +42,51 @@ export class CardPage {
         this.navCtrl.pop();
       }
     );
+  }
+
+  info = {
+    cardType: '',
+    cardNumber: '',
+    redactedCardNumber: '',
+    expiryMonth: null,
+    expiryYear: null,
+    cvv: '',
+    postalCode: ''
+  };
+
+  scanCard(){
+    let number: any;
+    this.cardIO.canScan()
+      .then(
+        (res: boolean) => {
+          if(res){
+            let options = {
+              requireExpiry: false,
+              requireCVV: false,
+              requirePostalCode: false,
+              requireCardholderName: false,
+              suppressManual: true,
+              useCardIOLogo: true
+            };
+            this.cardIO.scan(options).then(
+              (data) => {
+                const { cardType, cardNumber, redactedCardNumber,
+                  expiryMonth, expiryYear, cvv, postalCode } = data;
+
+                  this.info = {
+                    cardType,
+                    cardNumber,
+                    redactedCardNumber,
+                    expiryMonth,
+                    expiryYear,
+                    cvv,
+                    postalCode
+                  };
+              },
+              (err) => alert(JSON.stringify(number))
+            );
+          }
+        }
+      );
   }
 }

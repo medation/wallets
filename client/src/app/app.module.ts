@@ -8,6 +8,7 @@ import {DashPage} from '../pages/dash/dash';
 import {PaymentPage} from '../pages/payment/payment';
 import {PannierPage} from '../pages/pannier/pannier';
 import {TransferPage} from '../pages/transfer/transfer';
+import {NfcPage} from '../pages/nfc/nfc';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {CustomFormsModule} from 'ng2-validation';
@@ -23,6 +24,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { TextMaskModule } from 'angular2-text-mask';
 import { TouchID } from '@ionic-native/touch-id';
+import { CardIO } from '@ionic-native/card-io';
+import { NFC, Ndef } from '@ionic-native/nfc';
 
 export function jwtOptionsFactory(storage: Storage) {
   return {
@@ -39,6 +42,7 @@ export function jwtOptionsFactory(storage: Storage) {
     DashPage,
     PaymentPage,
     TransferPage,
+    NfcPage,
     PannierPage
   ],
   imports: [
@@ -67,6 +71,7 @@ export function jwtOptionsFactory(storage: Storage) {
     DashPage,
     PaymentPage,
     TransferPage,
+    NfcPage,
     PannierPage
   ],
   providers: [
@@ -75,7 +80,10 @@ export function jwtOptionsFactory(storage: Storage) {
     QRScanner,
     BarcodeScanner,
     InAppBrowser,
+    CardIO,
     TouchID,
+    NFC,
+    Ndef,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PaymentService,
     TokenizeService,

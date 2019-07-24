@@ -41,11 +41,14 @@ export class CardsPage {
   hideCards(){
     this.show = false;
   }
-
   
+  redirect(card:any){
+    this.navCtrl.push(DashPage, {card : card});
+  }
+
+  /*
   redirect(card:any) {
 
-    
     this.tokenizeService.checkLogin();
     let logged : boolean;
     this.tokenizeService.authUser.subscribe(jwt => {
@@ -92,12 +95,10 @@ export class CardsPage {
         },err=>console.log(err)
       );
     }
-    /*
-    
-    */
     console.log("show browser");
   }
-  
+  */
+
   addCard(){
     this.navCtrl.push(CardPage);
   }
