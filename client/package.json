@@ -27,6 +27,7 @@
     "@ionic-native/camera-preview": "^5.10.0",
     "@ionic-native/card-io": "^4.20.0",
     "@ionic-native/core": "4.5.2",
+    "@ionic-native/hce": "^5.12.0",
     "@ionic-native/in-app-browser": "^4.20.0",
     "@ionic-native/nfc": "^4.20.0",
     "@ionic-native/qr-scanner": "^5.10.0",
@@ -44,6 +45,7 @@
     "cordova-plugin-console": "1.1.0",
     "cordova-plugin-cookiemaster": "^1.0.5",
     "cordova-plugin-device": "2.0.1",
+    "cordova-plugin-hce": "^1.0.0",
     "cordova-plugin-inappbrowser": "^3.1.0",
     "cordova-plugin-splashscreen": "5.0.1",
     "cordova-plugin-statusbar": "2.4.1",
@@ -88,7 +90,8 @@
       "com.cordova.plugins.cookiemaster": {},
       "cordova-plugin-touch-id": {},
       "card.io.cordova.mobilesdk": {},
-      "phonegap-nfc": {}
+      "phonegap-nfc": {},
+      "cordova-plugin-hce": {}
     },
     "platforms": [
       "android",

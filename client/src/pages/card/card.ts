@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, NgZone } from '@angular/core';
+import { NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Storage } from "@ionic/storage";
 import { CardModel } from "../../model/card";
 import { CardIO } from '@ionic-native/card-io';
+import { NFC, Ndef } from '@ionic-native/nfc';
+import { Tag, TagUtil } from '../../model/tag';
 
 @Component({
   selector: 'page-card',
@@ -14,11 +16,20 @@ export class CardPage {
   cards: any;
   card: CardModel = new CardModel();
   types: any;
+  dataReceived:boolean;
+  showAnimation:boolean = false;
+  tag:Tag;
 
   constructor(private navCtrl: NavController, 
+              private alertCtrl: AlertController,
+              private toastCtrl: ToastController,
               private navParams: NavParams,
               private storage: Storage,
-              private cardIO: CardIO){
+              private cardIO: CardIO,
+              private nfc: NFC, 
+              private ndef: Ndef,
+              private zone: NgZone){
+    this.tag = new Tag();
     this.types = ["visa","mastercard","american"];    
     /* For test */
     this.card.bank = 'DEF';
@@ -54,7 +65,7 @@ export class CardPage {
     postalCode: ''
   };
 
-  scanCard(){
+  cadreCard(){
     let number: any;
     this.cardIO.canScan()
       .then(
@@ -88,5 +99,46 @@ export class CardPage {
           }
         }
       );
+  }
+
+  scanCard(){
+    this.nfc.enabled().then(
+      () => {
+        this.addNfcListeners();
+      },
+      (err) => console.log(err)
+    )
+  }
+
+  addNfcListeners():void {
+    this.nfc.addTagDiscoveredListener((tagEvent:Event) => this.tagListenerSuccess(tagEvent));
+    this.nfc.addNdefListener((tagEvent:Event) => this.tagListenerSuccess(tagEvent));
+  }
+
+  tagListenerSuccess(tagEvent:Event) {
+      console.log(tagEvent);
+      this.zone.run(()=> {
+          this.tag = TagUtil.readTagFromJson(tagEvent);
+          this.dataReceived = true;
+          const alert = this.alertCtrl.create({
+              title: 'Tag saved',
+                subTitle: 'Tag \'' + this.tag.id + '\' received!',
+                buttons: ['Ok']
+            }
+          );
+        alert.present();
+          this.vibrate(2000);
+      });
+  }
+
+  vibrate(time:number):void {
+      if(navigator.vibrate) {
+          navigator.vibrate(time);
+      }
+  }
+
+  scanNewTag():void {
+      this.dataReceived = false;
+      this.showAnimation = false;
   }
 }
