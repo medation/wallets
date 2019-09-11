@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PaymentPage } from '../payment/payment';
 import { TransferPage } from '../transfer/transfer';
-import { NfcPage } from '../nfc/nfc';
 
 @Component({
   selector: 'page-dash',
@@ -26,11 +25,6 @@ export class DashPage {
         id: '2',
         logo: "assets/icon/payment/transfer-scan-128.png",
         label: "Envoyer"
-      },
-      {
-        id: '3',
-        logo: "assets/icon/payment/transfer-scan-128.png",
-        label: "NFC"
       }
     ];
   }
@@ -41,9 +35,6 @@ export class DashPage {
     }
     if(service.id == 2){
       this.navCtrl.push(PaymentPage, { service : service });
-    }
-    if(service.id == 3){
-      this.navCtrl.push(NfcPage, { service : service });
     }
   }
 

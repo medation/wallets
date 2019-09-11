@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6290fdc-49eb-4ab0-abdd-9328016686a6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/pages/nfc/nfc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/pages/nfc/nfc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/pages/nfc/nfc.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/team.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/card/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/card/card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/card/card.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/card/card.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/cards/cards.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/cards/cards.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/dash/dash.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/dash/dash.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/pannier/pannier.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/pannier/pannier.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/nfc/nfc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/nfc/nfc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/nfc/nfc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/nfc/nfc.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet.iml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/registry/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/authentication/src/main/java/com/sbc/authentication/security/JwtFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+            <state relative-caret-position="163">
+              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -51,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/src/main/resources/services/gateway.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="180">
               <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
             </state>
           </provider>
@@ -61,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/config/src/main/resources/services/authentication.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -171,7 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,16 +172,11 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="authentication" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="team" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -465,11 +448,11 @@
     </configuration>
     <list>
       <item itemvalue="Maven.run Config" />
-      <item itemvalue="Maven.run registry" />
-      <item itemvalue="Maven.run gateway" />
       <item itemvalue="Maven.run authentication" />
+      <item itemvalue="Maven.run gateway" />
       <item itemvalue="Maven.run payment" />
       <item itemvalue="Maven.run projet" />
+      <item itemvalue="Maven.run registry" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -496,8 +479,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30530304" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31060606" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -508,7 +492,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32954547" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.4969697" visible="true" weight="0.40728477" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4969697" weight="0.40728477" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32954547" />
@@ -934,24 +918,24 @@
     <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/src/main/resources/services/authentication.yml">
+    <entry file="file://$PROJECT_DIR$/authentication/src/main/java/com/sbc/authentication/security/JwtFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state relative-caret-position="163">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/src/main/resources/services/gateway.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
+        <state relative-caret-position="180">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authentication/src/main/java/com/sbc/authentication/security/JwtFilter.java">
+    <entry file="file://$PROJECT_DIR$/config/src/main/resources/services/authentication.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
         </state>
       </provider>
     </entry>

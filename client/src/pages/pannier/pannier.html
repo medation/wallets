@@ -10,20 +10,31 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding class="no-scroll" padding style="background: none transparent;">
+<ion-content padding style="background: none transparent;">
   <div>
-    <ion-card>
-      <ion-card-header>
-        Panier :
-      </ion-card-header>
-      <ion-card-content *ngFor="let transaction of transactions">
+    <ion-list lines="none">
+      <ion-item-sliding class="pannier" *ngFor="let transaction of transactions">
+        <ion-item>
           <ion-grid>
             <ion-row>
               <ion-col>
+                <p class="info">Intitulé</p>
+              </ion-col>
+              <ion-col>
                 <p class="info">{{transaction.institution}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p class="info">Montant</p>
               </ion-col>
               <ion-col>
                 <p class="info">{{transaction.amount}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p class="info">Devise</p>
               </ion-col>
               <ion-col>
                 <p class="info">{{transaction.currency}}</p>
@@ -38,9 +49,16 @@
               </ion-col>
             </ion-row>
           </ion-grid>      
-      </ion-card-content>
-    </ion-card>
-    <div>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="sopra-secondary" (click)="remove(transaction)">
+            <ion-icon name="trash"></ion-icon>
+            Enlever
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <div *ngIf="transactions?.length > 0">
       <button ion-button block  outline color="sopra-secondary">Payer</button>
     </div>
   </div>

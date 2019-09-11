@@ -2,30 +2,31 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {CustomFormsModule} from 'ng2-validation';
+import {Storage, IonicStorageModule} from "@ionic/storage";
+import {CommandService} from "../services/command.service";
+import {HttpClientModule} from "@angular/common/http";
+import {JWT_OPTIONS, JwtModule} from '@auth0/angular-jwt';
+import {from} from 'rxjs/observable/from';
+import {QRScanner,QRScannerStatus} from '@ionic-native/qr-scanner/ngx';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+import {BarcodeScanner} from '@ionic-native/barcode-scanner';
+import {TextMaskModule} from 'angular2-text-mask';
+import {TouchID} from '@ionic-native/touch-id';
+import {CardIO} from '@ionic-native/card-io';
+import {NFC, Ndef} from '@ionic-native/nfc';
+
+import {PaymentService} from "../services/payment.service";
+import {TokenizeService} from "../services/tokenize.service";
+
 import {CardsPage} from '../pages/cards/cards';
 import {CardPage} from '../pages/card/card';
 import {DashPage} from '../pages/dash/dash';
 import {PaymentPage} from '../pages/payment/payment';
 import {PannierPage} from '../pages/pannier/pannier';
 import {TransferPage} from '../pages/transfer/transfer';
-import {NfcPage} from '../pages/nfc/nfc';
-import {StatusBar} from '@ionic-native/status-bar';
-import {SplashScreen} from '@ionic-native/splash-screen';
-import {CustomFormsModule} from 'ng2-validation';
-import {Storage, IonicStorageModule} from "@ionic/storage";
-import {PaymentService} from "../services/payment.service";
-import {TokenizeService} from "../services/tokenize.service";
-import {CommandService} from "../services/command.service";
-import {HttpClientModule} from "@angular/common/http";
-import {JWT_OPTIONS, JwtModule} from '@auth0/angular-jwt';
-import { from } from 'rxjs/observable/from';
-import { QRScanner,QRScannerStatus} from '@ionic-native/qr-scanner/ngx';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { TextMaskModule } from 'angular2-text-mask';
-import { TouchID } from '@ionic-native/touch-id';
-import { CardIO } from '@ionic-native/card-io';
-import { NFC, Ndef } from '@ionic-native/nfc';
 
 export function jwtOptionsFactory(storage: Storage) {
   return {
@@ -42,7 +43,6 @@ export function jwtOptionsFactory(storage: Storage) {
     DashPage,
     PaymentPage,
     TransferPage,
-    NfcPage,
     PannierPage
   ],
   imports: [
@@ -71,7 +71,6 @@ export function jwtOptionsFactory(storage: Storage) {
     DashPage,
     PaymentPage,
     TransferPage,
-    NfcPage,
     PannierPage
   ],
   providers: [

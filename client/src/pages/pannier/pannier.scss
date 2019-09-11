@@ -3,6 +3,15 @@ page-pannier {
         background-color: color($colors, light, base) !important;
         padding-top: 50px;
     }
+    .list-ios:not(.list-inset):not(.list-ios-lines-none) .item:last-child {
+        --inner-border-width: 0;
+        --border-width: 0 0 0 0;
+    }
+    .pannier {
+        border: 1px solid color($colors, sopra-primary, base);
+        border-radius: 10px;
+        margin-bottom: 2px;
+    }
     .info {
         color: rgb(0, 0, 0);
         font-size: 0.8em;

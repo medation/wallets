@@ -3,6 +3,12 @@ page-cards {
         background-color: color($colors, light, base)!important;
         padding-top: 50px;
     }
+    .list-cards {
+        background-color: color($colors, light, base)!important;
+    }
+    ion-item {
+        padding: 5px;
+    }
     ion-grid.cardON {
         background-color: color($colors, sopra-secondary, base);
         border-radius: 10px;
